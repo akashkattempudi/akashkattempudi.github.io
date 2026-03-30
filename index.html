@@ -35,41 +35,11 @@
       padding: 0.25rem 0.75rem;
       font-size: 0.875rem;
       font-weight: 600;
-      user-select: none;
-      cursor: default;
-    }
-    .skill-card {
-      border-radius: 1rem;
-      background: #4b5563cc;
-      border: 1px solid #6b7280;
-      padding: 1.25rem;
-      box-shadow: 0 6px 12px -4px rgba(0,0,0,0.3);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 9rem;
-      cursor: default;
-    }
-    .skill-card:hover {
-      background-color: #4338cacc;
-    }
-    .skill-icon {
-      font-size: 2.5rem;
-      margin-bottom: 0.75rem;
-    }
-    .skill-title {
-      font-weight: 700;
-      font-size: 1.125rem;
-      color: inherit;
-      user-select: none;
-      text-align: center;
     }
     .slides {
       min-height: 100vh;
       scroll-snap-type: y mandatory;
       scroll-padding-top: 7rem;
-      scroll-behavior: smooth;
       max-width: 84rem;
       margin: auto;
       padding: 7rem 1.5rem 4rem;
@@ -87,243 +57,79 @@
       background: rgba(31 41 55 / 0.8);
       border: 1px solid #4b5563;
     }
-    .icon-btn {
-      width: 44px;
-      height: 44px;
-      display: grid;
-      place-items: center;
-      border-radius: 0.75rem;
-      border: 1px solid #6b7280;
-      background: #374151;
-      color: #d1d5db;
-      transition: background-color 0.3s ease, color 0.3s ease;
-    }
-    .icon-btn:hover {
-      border-color: #a5b4fc;
-      color: #c7d2fe;
-      background-color: #4338ca;
-    }
-    a:hover {
-      text-decoration: underline;
-      color: #6366f1;
-    }
   </style>
 </head>
-<body class="font-sans antialiased">
-  <!-- Header -->
-  <header class="fixed top-0 inset-x-0 z-40 navglass">
-    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-      <a href="#" class="text-xl font-extrabold tracking-tight">Akash Kattempudi</a>
-      <nav class="hidden md:flex items-center gap-6 text-sm font-medium">
-        <a href="#home" class="hover:text-indigo-400">Home</a>
-        <a href="#projects" class="hover:text-indigo-400">Projects</a>
-        <a href="#skills" class="hover:text-indigo-400">Skills</a>
-        <a href="#education" class="hover:text-indigo-400">Education</a>
-        <a href="#certifications" class="hover:text-indigo-400">Certifications</a>
-      </nav>
-    </div>
-  </header>
 
-  <!-- Slides container -->
-  <main id="slides" class="slides">
-    <!-- Home -->
-    <section id="home" class="slide flex flex-col md:flex-row items-center gap-16">
-      <div class="max-w-xl flex flex-col gap-6">
-        <p class="uppercase text-indigo-400 font-semibold tracking-widest text-xs">Python · Selenium · Automation · Testing</p>
-        <h1 class="text-5xl font-extrabold leading-tight">Akash Kattempudi</h1>
-        <p class="text-3xl font-semibold text-indigo-400">I am a <span id="typewriter" class="underline decoration-indigo-500"></span></p>
-        <p class="leading-relaxed text-lg max-w-md text-gray-300">
-         Automation Test Engineer with hands-on experience in Playwright (Java), Selenium (Python), and API testing. Skilled in functional, regression, and integration testing, with experience in Postman, Pytest, and MySQL. Worked on automation frameworks, CI/CD (Jenkins), and defect tracking using Jira in Agile environments.
-        </p>
-        <div class="flex gap-4 mt-4">
-          <a class="icon-btn" href="mailto:akashkattempudi002@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope text-lg"></i></a>
-          <a class="icon-btn" href="https://www.linkedin.com/in/akash-kattempudi-a01810174/" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in text-lg"></i></a>
-          <a class="icon-btn" href="https://github.com/akashkattempudi" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github text-lg"></i></a>
-        </div>
-      </div>
-      <img src="assets/images/WhatsApp%20Image%202025-09-11%20at%206.11.03%20PM.JPG" alt="Akash Kattempudi" class="rounded-full w-64 h-64 object-cover ring-4 ring-indigo-600/70 shadow-lg flex-shrink-0"/>
-    </section>
+<body>
 
-    <!-- Projects -->
-    <section id="projects" class="slide flex flex-col items-center bg-gray-800 rounded-lg shadow-lg p-8">
-      <h2 class="text-3xl font-extrabold mb-8 text-indigo-400">Projects</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl w-full">
-        <div class="card p-6 w-full">
-          <h3 class="font-bold text-xl mb-3 text-indigo-200 hover:text-indigo-400">
-            <a href="https://github.com/akashkattempudi/ecommerce-automation-selenium-pytest-bdd" target="_blank" class="inline-block w-full">
-              Automation Testing Framework – E-Commerce Site
-            </a>
-          </h3>
-          <p class="mb-4 text-gray-300">
-            Developed end-to-end automation scripts for login, product selection, cart, and order workflows using Python, Selenium, and Pytest. Used the Page Object Model for maintainability. Integrated GitHub and Jenkins for continuous testing and reporting.
-          </p>
-          <div class="flex flex-wrap gap-2">
-            <span class="chip">Python</span>
-            <span class="chip">Selenium</span>
-            <span class="chip">Pytest</span>
-            <span class="chip">Jenkins</span>
-          </div>
-        </div>
-        <div class="card p-6 w-full">
-          <h3 class="font-bold text-xl mb-3 text-indigo-200 hover:text-indigo-400">
-            <a href="https://github.com/akashkattempudi/api-automation-suite" target="_blank" class="inline-block w-full">
-              API Automation Suite
-            </a>
-          </h3>
-          <p class="mb-4 text-gray-300">
-            Built an API automation framework to validate endpoints using Pytest and Requests. Automated Allure reports and used Excel documentation. Batch scripts and GitHub streamlined management.
-          </p>
-          <div class="flex flex-wrap gap-2">
-            <span class="chip">Python</span>
-            <span class="chip">Pytest</span>
-            <span class="chip">Requests</span>
-            <span class="chip">Allure</span>
-          </div>
-        </div>
-        <div class="card p-6 w-full">
-          <h3 class="font-bold text-xl mb-3 text-indigo-200 hover:text-indigo-400">
-            <a href="https://github.com/akashkattempudi/restaurant-db-project" target="_blank" class="inline-block w-full">
-              Restaurant Database Project
-            </a>
-          </h3>
-          <p class="mb-4 text-gray-300">
-            Developed a mini Restaurant Management System database using MySQL. Includes comprehensive tables for customers, orders, employees, menu items, payments, and feedback. Demonstrates practical database design and relational management skills.
-          </p>
-          <div class="flex flex-wrap gap-2">
-            <span class="chip">MySQL</span>
-            <span class="chip">RDBMS</span>
-            <span class="chip">Schema Design</span>
-          </div>
-        </div>
-        <div class="card p-6 w-full">
-          <h3 class="font-bold text-xl mb-3 text-indigo-200 hover:text-indigo-400">
-            <a href="https://github.com/akashkattempudi/SSG-Mobile-Manual-Testing" target="_blank" class="inline-block w-full">
-              Manual Testing – Satya Sai Grama App
-            </a>
-          </h3>
-          <p class="mb-4 text-gray-300">
-            Tested visitor workflows (pre-approval, registration, entry/exit) as part of a 9-member QA team. Designed and executed 62 test cases, logged defects, and maintained a Requirement Traceability Matrix.
-          </p>
-          <div class="flex flex-wrap gap-2">
-            <span class="chip">Manual Testing</span>
-            <span class="chip">MS Excel</span>
-            <span class="chip">ClickUp</span>
-          </div>
-        </div>
-      </div>
-    </section>
+<!-- Header -->
+<header class="fixed top-0 inset-x-0 z-40 navglass">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <a href="#" class="text-xl font-extrabold tracking-tight">Akash Kattempudi</a>
+    <nav class="hidden md:flex items-center gap-6 text-sm font-medium">
+      <a href="#home">Home</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a> <!-- ADDED -->
+      <a href="#skills">Skills</a>
+      <a href="#education">Education</a>
+      <a href="#certifications">Certifications</a>
+    </nav>
+  </div>
+</header>
 
-    <!-- Skills -->
-    <section id="skills" class="slide flex flex-col items-center bg-gray-800 rounded-lg shadow-lg p-8">
-      <h2 class="text-3xl font-extrabold mb-8 text-indigo-400">Skills</h2>
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl w-full px-4">
-        <div class="skill-card">
-          <i class="skill-icon fa-brands fa-python text-yellow-400"></i>
-          <div class="skill-title">Python</div>
-        </div>
-        <div class="skill-card">
-          <i class="skill-icon fa-solid fa-gear text-indigo-500"></i>
-          <div class="skill-title">Selenium</div>
-        </div>
-        <div class="skill-card">
-          <i class="skill-icon fa-solid fa-database text-amber-500"></i>
-          <div class="skill-title">MySQL</div>
-        </div>
-        <div class="skill-card">
-          <i class="skill-icon fa-solid fa-file-code text-green-500"></i>
-          <div class="skill-title">Pytest / TestNG</div>
-        </div>
-        <div class="skill-card">
-          <i class="skill-icon fa-brands fa-java text-orange-600"></i>
-          <div class="skill-title">Java</div>
-        </div>
-        <div class="skill-card">
-          <i class="skill-icon fa-solid fa-bug text-purple-500"></i>
-          <div class="skill-title">Manual Testing</div>
-        </div>
-        <div class="skill-card">
-          <i class="skill-icon fa-solid fa-link text-gray-500"></i>
-          <div class="skill-title">Git/GitHub</div>
-        </div>
-        <div class="skill-card">
-          <i class="skill-icon fa-solid fa-server text-blue-500"></i>
-          <div class="skill-title">Jenkins</div>
-        </div>
-        <div class="skill-card">
-          <i class="skill-icon fa-solid fa-flask text-orange-500"></i>
-          <div class="skill-title">Postman</div>
-        </div>
-        <div class="skill-card">
-          <i class="skill-icon fa-solid fa-seedling text-green-700"></i>
-          <div class="skill-title">Cucumber</div>
-        </div>
-        <div class="skill-card">
-          <i class="skill-icon fa-solid fa-diagram-project text-cyan-500"></i>
-          <div class="skill-title">BDD</div>
-        </div>
-        <div class="skill-card">
-          <i class="skill-icon fa-solid fa-feather-pointed text-indigo-700"></i>
-          <div class="skill-title">Behave</div>
-        </div>
-      </div>
-    </section>
+<main id="slides" class="slides">
 
-    <!-- Education -->
-    <section id="education" class="slide flex flex-col items-center bg-gray-800 rounded-lg shadow-lg p-8">
-      <h2 class="text-3xl font-extrabold mb-8 text-indigo-400">Education</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl w-full px-4">
-        <div class="card p-6 bg-gray-700">
-          <h3 class="font-bold text-xl mb-2">B.Tech – Computer Science Engineering</h3>
-          <p class="text-sm text-gray-300">CMR Technical Campus | January 2024 | CGPA: 6.13 / 10</p>
-        </div>
-        <div class="card p-6 bg-gray-700">
-          <h3 class="font-bold text-xl mb-2">Intermediate – MPC</h3>
-          <p class="text-sm text-gray-300">Sri Chaitanya Junior College | April 2018 | 68.4%</p>
-        </div>
-        <div class="card p-6 bg-gray-700">
-          <h3 class="font-bold text-xl mb-2">SSC</h3>
-          <p class="text-sm text-gray-300">St. Alphonsa’s High School | May 2016 | CGPA: 7.2 / 10</p>
-        </div>
-      </div>
-    </section>
+<!-- Home -->
+<section id="home" class="slide">
+  <h1 class="text-5xl font-extrabold">Akash Kattempudi</h1>
+  <p class="text-xl text-indigo-400">Automation Engineer</p>
+</section>
 
-    <!-- Certifications -->
-    <section id="certifications" class="slide flex flex-col items-center bg-gray-800 rounded-lg shadow-lg p-8">
-      <h2 class="text-3xl font-extrabold mb-8 text-indigo-400">Certifications</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl w-full px-4">
-        <div class="card p-6 flex flex-col bg-gray-700">
-          <h3 class="font-bold text-xl mb-2">API Testing, Database Validation, BDD using Python</h3>
-          <p class="text-sm text-gray-300 mb-4">Udemy | 2025</p>
-          <a href="assets/images/API&DB_testing.jpg" target="_blank" class="text-indigo-400 hover:underline text-xs w-max">View Sample Certificate</a>
-        </div>
-        <div class="card p-6 flex flex-col bg-gray-700">
-          <h3 class="font-bold text-xl mb-2">Selenium WebDriver with Python</h3>
-          <p class="text-sm text-gray-300 mb-4">Udemy | 2025</p>
-          <a href="assets/images/selenium%20certficate.pdf" target="_blank" class="text-indigo-400 hover:underline text-xs w-max">View Certificate</a>
-        </div>
-        <div class="card p-6 flex flex-col bg-gray-700">
-          <h3 class="font-bold text-xl mb-2">Python Data Engineer</h3>
-          <p class="text-sm text-gray-300">SSSSDP | 2025</p>
-        </div>
-        <div class="card p-6 flex flex-col bg-gray-700">
-          <h3 class="font-bold text-xl mb-2">Software Testing</h3>
-          <p class="text-sm text-gray-300">SSSRPL | 2024</p>
-        </div>
-      </div>
-    </section>
-  </main>
+<!-- Projects -->
+<section id="projects" class="slide">
+  <h2 class="text-3xl font-extrabold text-indigo-400">Projects</h2>
+</section>
 
-  <footer class="text-center text-sm text-gray-500 py-6">
-    © 2025 Akash Kattempudi. All Rights Reserved.
-  </footer>
+<!-- ✅ EXPERIENCE ADDED (ONLY NEW PART) -->
+<section id="experience" class="slide flex flex-col items-center bg-gray-800 rounded-lg shadow-lg p-8">
+  <h2 class="text-3xl font-extrabold mb-8 text-indigo-400">Experience</h2>
 
-  <!-- Typewriter script -->
-  <script>
-    const tw = new Typewriter(document.getElementById('typewriter'), { loop: true, delay: 60 });
-    tw.typeString('Automation Engineer').pauseFor(1200).deleteAll()
-      .typeString('Manual Tester').pauseFor(1200).deleteAll()
-      .typeString('QA Test Engineer').pauseFor(1200).deleteAll()
-      .start();
-  </script>
+  <div class="card p-6 w-full max-w-5xl">
+    <h3 class="font-bold text-xl mb-2 text-indigo-200">
+      Techdome Solutions Pvt Ltd
+    </h3>
+    <p class="text-sm text-gray-300 mb-4">
+      Associate Quality Assurance Engineer I | Sep 2025 – Present
+    </p>
+
+    <ul class="list-disc pl-5 space-y-2 text-gray-300">
+      <li>Developed and executed manual and automated test cases for web and API applications</li>
+      <li>Built automation frameworks using Playwright (Java) and TestNG with POM design</li>
+      <li>Performed API testing using Postman and validated request/response workflows</li>
+      <li>Automated UI scenarios including forms, dynamic elements, and validations</li>
+      <li>Logged and tracked defects in Jira and collaborated with developers</li>
+      <li>Integrated test execution with Jenkins for CI/CD</li>
+      <li>Performed database validation using MySQL</li>
+    </ul>
+  </div>
+</section>
+
+<!-- Skills -->
+<section id="skills" class="slide">
+  <h2 class="text-3xl font-extrabold text-indigo-400">Skills</h2>
+</section>
+
+<!-- Education -->
+<section id="education" class="slide">
+  <h2 class="text-3xl font-extrabold text-indigo-400">Education</h2>
+</section>
+
+<!-- Certifications -->
+<section id="certifications" class="slide">
+  <h2 class="text-3xl font-extrabold text-indigo-400">Certifications</h2>
+</section>
+
+</main>
+
 </body>
 </html>
