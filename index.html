@@ -11,30 +11,20 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-    body {
-      background: #0f172a;
-      color: #cbd5e1;
-      font-family: 'Inter', sans-serif;
-      margin: 0;
-    }
+    body { background: #0f172a; color: #cbd5e1; font-family: 'Inter', sans-serif; margin: 0; }
 
-    /* Gradient text */
     .grad {
       background: linear-gradient(135deg, #818cf8 0%, #a78bfa 50%, #38bdf8 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
-
-    /* Nav glass */
     .navglass {
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
       background: rgba(15, 23, 42, 0.85);
       border-bottom: 1px solid rgba(99, 102, 241, 0.15);
     }
-
-    /* Cards */
     .card {
       background: #1e293b;
       border: 1px solid #334155;
@@ -46,8 +36,6 @@
       border-color: #6366f1;
       box-shadow: 0 0 24px rgba(99, 102, 241, 0.2);
     }
-
-    /* Skill cards */
     .skill-card {
       background: #1e293b;
       border: 1px solid #334155;
@@ -61,13 +49,7 @@
       cursor: default;
       transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
     }
-    .skill-card:hover {
-      transform: translateY(-4px);
-      border-color: #6366f1;
-      background: #1e1b4b;
-    }
-
-    /* Chip */
+    .skill-card:hover { transform: translateY(-4px); border-color: #6366f1; background: #1e1b4b; }
     .chip {
       background: rgba(67, 56, 202, 0.25);
       border: 1px solid #4f46e5;
@@ -77,8 +59,6 @@
       font-size: 0.75rem;
       font-weight: 600;
     }
-
-    /* Featured badge */
     .badge-live {
       background: rgba(34,197,94,0.15);
       border: 1px solid #22c55e;
@@ -89,9 +69,8 @@
       font-weight: 700;
       letter-spacing: 0.05em;
       text-transform: uppercase;
+      white-space: nowrap;
     }
-
-    /* Icon buttons */
     .icon-btn {
       width: 46px; height: 46px;
       display: grid; place-items: center;
@@ -102,131 +81,76 @@
       transition: all 0.25s ease;
       text-decoration: none !important;
     }
-    .icon-btn:hover {
-      border-color: #818cf8;
-      color: #c7d2fe;
-      background: #312e81;
-      transform: translateY(-2px);
-    }
-
-    /* Download button */
+    .icon-btn:hover { border-color: #818cf8; color: #c7d2fe; background: #312e81; transform: translateY(-2px); }
     .btn-primary {
       display: inline-flex; align-items: center; gap: 0.5rem;
       background: linear-gradient(135deg, #4f46e5, #7c3aed);
-      color: #fff;
-      border-radius: 0.75rem;
-      padding: 0.7rem 1.5rem;
-      font-weight: 700;
-      font-size: 0.9rem;
-      border: none;
-      cursor: pointer;
+      color: #fff; border-radius: 0.75rem;
+      padding: 0.7rem 1.5rem; font-weight: 700;
+      font-size: 0.9rem; border: none; cursor: pointer;
       text-decoration: none;
       transition: opacity 0.2s ease, transform 0.2s ease;
     }
     .btn-primary:hover { opacity: 0.9; transform: translateY(-2px); text-decoration: none; color: #fff; }
-
-    /* Timeline */
     .timeline-dot {
-      width: 14px; height: 14px;
-      border-radius: 50%;
-      background: #6366f1;
-      border: 2px solid #312e81;
-      flex-shrink: 0;
-      margin-top: 4px;
+      width: 14px; height: 14px; border-radius: 50%;
+      background: #6366f1; border: 2px solid #312e81;
+      flex-shrink: 0; margin-top: 4px;
     }
-    .timeline-line {
-      width: 2px;
-      background: linear-gradient(180deg, #6366f1, transparent);
-      flex-shrink: 0;
-    }
-
-    /* Section container */
-    .section-wrap {
-      max-width: 72rem;
-      margin: 0 auto;
-      padding: 6rem 1.5rem 2rem;
-    }
-
-    /* Glow bg blobs */
-    .blob {
-      position: fixed;
-      border-radius: 50%;
-      filter: blur(80px);
-      opacity: 0.07;
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    /* Nav link */
+    .timeline-line { width: 2px; background: linear-gradient(180deg, #6366f1, transparent); flex-shrink: 0; }
+    .section-wrap { max-width: 72rem; margin: 0 auto; padding: 6rem 1.5rem 2rem; }
+    .blob { position: fixed; border-radius: 50%; filter: blur(80px); opacity: 0.07; pointer-events: none; z-index: 0; }
     .nav-link {
-      position: relative;
-      color: #94a3b8;
-      font-size: 0.875rem;
-      font-weight: 600;
-      text-decoration: none;
-      transition: color 0.2s;
+      position: relative; color: #94a3b8;
+      font-size: 0.875rem; font-weight: 600;
+      text-decoration: none; transition: color 0.2s;
     }
     .nav-link::after {
-      content: '';
-      position: absolute;
-      bottom: -2px; left: 0;
-      width: 0; height: 2px;
-      background: #818cf8;
-      border-radius: 2px;
+      content: ''; position: absolute;
+      bottom: -2px; left: 0; width: 0; height: 2px;
+      background: #818cf8; border-radius: 2px;
       transition: width 0.25s ease;
     }
     .nav-link:hover { color: #c7d2fe; text-decoration: none; }
     .nav-link:hover::after { width: 100%; }
-
-    /* Mobile menu */
     #mobile-menu { display: none; }
     #mobile-menu.open { display: flex; }
-
-    /* Section divider */
     .section-divider {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+      min-height: 100vh; display: flex;
+      flex-direction: column; justify-content: center;
       padding: 5rem 0 3rem;
     }
-    @media (min-width: 768px) {
-      .section-divider { padding: 7rem 0 4rem; }
-    }
-
+    @media (min-width: 768px) { .section-divider { padding: 7rem 0 4rem; } }
     a { color: inherit; }
     a:hover { text-decoration: none; }
   </style>
 </head>
 <body>
 
-  <!-- Background blobs -->
   <div class="blob" style="width:600px;height:600px;background:#6366f1;top:-200px;left:-200px;"></div>
   <div class="blob" style="width:500px;height:500px;background:#7c3aed;bottom:-150px;right:-150px;"></div>
 
-  <!-- ── NAVBAR ── -->
+  <!-- NAVBAR -->
   <header class="fixed top-0 inset-x-0 z-50 navglass">
     <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-      <a href="#home" class="text-lg font-extrabold tracking-tight grad" style="-webkit-text-fill-color:unset;background:none;color:#818cf8;">AK.</a>
+      <a href="#home" style="color:#818cf8;font-size:1.125rem;font-weight:800;text-decoration:none;">AK.</a>
       <nav class="hidden md:flex items-center gap-7">
         <a href="#home" class="nav-link">Home</a>
+        <a href="#experience" class="nav-link">Experience</a>
         <a href="#projects" class="nav-link">Projects</a>
         <a href="#skills" class="nav-link">Skills</a>
-        <a href="#experience" class="nav-link">Experience</a>
         <a href="#education" class="nav-link">Education</a>
         <a href="#certifications" class="nav-link">Certifications</a>
       </nav>
-      <!-- Mobile hamburger -->
-      <button id="hamburger" class="md:hidden text-gray-400 hover:text-white" onclick="toggleMenu()">
+      <button class="md:hidden text-gray-400 hover:text-white" onclick="toggleMenu()">
         <i class="fa-solid fa-bars text-xl"></i>
       </button>
     </div>
-    <!-- Mobile menu -->
     <div id="mobile-menu" class="flex-col gap-3 px-6 pb-4 md:hidden">
       <a href="#home" class="nav-link" onclick="toggleMenu()">Home</a>
+      <a href="#experience" class="nav-link" onclick="toggleMenu()">Experience</a>
       <a href="#projects" class="nav-link" onclick="toggleMenu()">Projects</a>
       <a href="#skills" class="nav-link" onclick="toggleMenu()">Skills</a>
-      <a href="#experience" class="nav-link" onclick="toggleMenu()">Experience</a>
       <a href="#education" class="nav-link" onclick="toggleMenu()">Education</a>
       <a href="#certifications" class="nav-link" onclick="toggleMenu()">Certifications</a>
     </div>
@@ -234,10 +158,9 @@
 
   <main class="relative z-10">
 
-    <!-- ── HOME ── -->
+    <!-- HOME -->
     <section id="home" class="section-wrap section-divider">
       <div class="flex flex-col md:flex-row items-center gap-14">
-        <!-- Text -->
         <div class="flex-1 flex flex-col gap-5 max-w-xl">
           <span class="text-xs font-bold tracking-widest uppercase text-indigo-400">Quality Assurance · Automation · CI/CD</span>
           <h1 class="text-5xl md:text-6xl font-black leading-tight text-white">
@@ -260,7 +183,6 @@
             </div>
           </div>
         </div>
-        <!-- Avatar -->
         <div class="relative flex-shrink-0">
           <div class="absolute inset-0 rounded-full blur-2xl opacity-30" style="background:linear-gradient(135deg,#6366f1,#7c3aed);transform:scale(1.1);"></div>
           <img src="assets/images/WhatsApp%20Image%202025-09-11%20at%206.11.03%20PM.JPG"
@@ -270,202 +192,20 @@
       </div>
     </section>
 
-    <!-- ── PROJECTS ── -->
-    <section id="projects" class="section-wrap section-divider">
-      <div class="text-center mb-12">
-        <h2 class="text-4xl font-extrabold text-white mb-2">Projects</h2>
-        <p class="text-slate-400">What I've built and tested</p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-
-        <!-- Wizlo — LIVE/CURRENT -->
-        <div class="card p-6 flex flex-col gap-4 col-span-1 md:col-span-2 lg:col-span-1">
-          <div class="flex items-start justify-between gap-2">
-            <h3 class="font-bold text-lg text-white leading-snug">Wizlo Web Application – Manual & Automation</h3>
-            <span class="badge-live">Live</span>
-          </div>
-          <p class="text-sm text-slate-400 leading-relaxed flex-1">
-            Automated end-to-end scenarios including form validations, dynamic tables, and error handling using Playwright & Java. Integrated test suites into CI/CD pipelines. Validated backend APIs and designed reusable page objects for scalable coverage.
-          </p>
-          <div class="flex flex-wrap gap-2">
-            <span class="chip">Playwright</span>
-            <span class="chip">Java</span>
-            <span class="chip">TestNG</span>
-            <span class="chip">Jira</span>
-            <span class="chip">CI/CD</span>
-          </div>
-          <a href="https://github.com/akashkattempudi" target="_blank" class="text-indigo-400 hover:text-indigo-300 text-sm font-semibold flex items-center gap-1 w-max">
-            <i class="fa-brands fa-github"></i> View on GitHub
-          </a>
-        </div>
-
-        <!-- Sparrow — CURRENT -->
-        <div class="card p-6 flex flex-col gap-4">
-          <div class="flex items-start justify-between gap-2">
-            <h3 class="font-bold text-lg text-white leading-snug">Sparrow API Tool – Manual & Automation</h3>
-            <span class="badge-live">Live</span>
-          </div>
-          <p class="text-sm text-slate-400 leading-relaxed flex-1">
-            End-to-end manual & automated testing of the Sparrow API tool. Validated REST, GraphQL, and WebSocket flows. Built a TestNG-based Playwright framework with reusable page classes and assertion-based validations.
-          </p>
-          <div class="flex flex-wrap gap-2">
-            <span class="chip">Playwright</span>
-            <span class="chip">Java</span>
-            <span class="chip">TestNG</span>
-            <span class="chip">Jira</span>
-          </div>
-          <a href="https://github.com/akashkattempudi" target="_blank" class="text-indigo-400 hover:text-indigo-300 text-sm font-semibold flex items-center gap-1 w-max">
-            <i class="fa-brands fa-github"></i> View on GitHub
-          </a>
-        </div>
-
-        <!-- E-Commerce Automation -->
-        <div class="card p-6 flex flex-col gap-4">
-          <h3 class="font-bold text-lg text-white leading-snug">E-Commerce Automation Framework</h3>
-          <p class="text-sm text-slate-400 leading-relaxed flex-1">
-            End-to-end automation for login, product selection, cart, and order workflows using Python & Selenium. Implemented POM for maintainability. Integrated Jenkins for CI/CD with Allure & HTML reporting.
-          </p>
-          <div class="flex flex-wrap gap-2">
-            <span class="chip">Python</span>
-            <span class="chip">Selenium</span>
-            <span class="chip">Pytest</span>
-            <span class="chip">Jenkins</span>
-            <span class="chip">Allure</span>
-          </div>
-          <a href="https://github.com/akashkattempudi/ecommerce-automation-selenium-pytest-bdd" target="_blank" class="text-indigo-400 hover:text-indigo-300 text-sm font-semibold flex items-center gap-1 w-max">
-            <i class="fa-brands fa-github"></i> View on GitHub
-          </a>
-        </div>
-
-        <!-- API Suite -->
-        <div class="card p-6 flex flex-col gap-4">
-          <h3 class="font-bold text-lg text-white leading-snug">API Automation Suite</h3>
-          <p class="text-sm text-slate-400 leading-relaxed flex-1">
-            API automation framework validating multiple endpoints (products, brands, user management) using Pytest & Requests with dynamic test data. Allure reporting and Excel-based test traceability.
-          </p>
-          <div class="flex flex-wrap gap-2">
-            <span class="chip">Python</span>
-            <span class="chip">Pytest</span>
-            <span class="chip">Requests</span>
-            <span class="chip">Allure</span>
-          </div>
-          <a href="https://github.com/akashkattempudi/api-automation-suite" target="_blank" class="text-indigo-400 hover:text-indigo-300 text-sm font-semibold flex items-center gap-1 w-max">
-            <i class="fa-brands fa-github"></i> View on GitHub
-          </a>
-        </div>
-
-        <!-- Restaurant DB -->
-        <div class="card p-6 flex flex-col gap-4">
-          <h3 class="font-bold text-lg text-white leading-snug">Restaurant Database Project</h3>
-          <p class="text-sm text-slate-400 leading-relaxed flex-1">
-            Mini Restaurant Management System built with MySQL. Covers customers, orders, employees, menu items, payments, and feedback — demonstrating practical relational database design.
-          </p>
-          <div class="flex flex-wrap gap-2">
-            <span class="chip">MySQL</span>
-            <span class="chip">RDBMS</span>
-            <span class="chip">Schema Design</span>
-          </div>
-          <a href="https://github.com/akashkattempudi/restaurant-db-project" target="_blank" class="text-indigo-400 hover:text-indigo-300 text-sm font-semibold flex items-center gap-1 w-max">
-            <i class="fa-brands fa-github"></i> View on GitHub
-          </a>
-        </div>
-
-        <!-- Manual Testing -->
-        <div class="card p-6 flex flex-col gap-4">
-          <h3 class="font-bold text-lg text-white leading-snug">Manual Testing – Satya Sai Grama App</h3>
-          <p class="text-sm text-slate-400 leading-relaxed flex-1">
-            Tested visitor workflows (pre-approval, registration, entry/exit) as part of a 9-member QA team. Designed 62 test cases, logged defects, and maintained a Requirement Traceability Matrix.
-          </p>
-          <div class="flex flex-wrap gap-2">
-            <span class="chip">Manual Testing</span>
-            <span class="chip">MS Excel</span>
-            <span class="chip">ClickUp</span>
-            <span class="chip">RTM</span>
-          </div>
-          <a href="https://github.com/akashkattempudi/SSG-Mobile-Manual-Testing" target="_blank" class="text-indigo-400 hover:text-indigo-300 text-sm font-semibold flex items-center gap-1 w-max">
-            <i class="fa-brands fa-github"></i> View on GitHub
-          </a>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ── SKILLS ── -->
-    <section id="skills" class="section-wrap section-divider">
-      <div class="text-center mb-12">
-        <h2 class="text-4xl font-extrabold text-white mb-2">Skills</h2>
-        <p class="text-slate-400">Tools and technologies I work with</p>
-      </div>
-      <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-4">
-        <div class="skill-card">
-          <i class="fa-brands fa-python text-4xl text-yellow-400"></i>
-          <div class="text-sm font-bold text-slate-200 text-center">Python</div>
-        </div>
-        <div class="skill-card">
-          <i class="fa-brands fa-java text-4xl text-orange-500"></i>
-          <div class="text-sm font-bold text-slate-200 text-center">Java</div>
-        </div>
-        <div class="skill-card">
-          <i class="fa-solid fa-masks-theater text-4xl text-green-400"></i>
-          <div class="text-sm font-bold text-slate-200 text-center">Playwright</div>
-        </div>
-        <div class="skill-card">
-          <i class="fa-solid fa-gear text-4xl text-indigo-400"></i>
-          <div class="text-sm font-bold text-slate-200 text-center">Selenium</div>
-        </div>
-        <div class="skill-card">
-          <i class="fa-solid fa-file-code text-4xl text-emerald-400"></i>
-          <div class="text-sm font-bold text-slate-200 text-center">Pytest / TestNG</div>
-        </div>
-        <div class="skill-card">
-          <i class="fa-solid fa-flask text-4xl text-orange-400"></i>
-          <div class="text-sm font-bold text-slate-200 text-center">Postman</div>
-        </div>
-        <div class="skill-card">
-          <i class="fa-solid fa-database text-4xl text-amber-400"></i>
-          <div class="text-sm font-bold text-slate-200 text-center">MySQL</div>
-        </div>
-        <div class="skill-card">
-          <i class="fa-solid fa-bug text-4xl text-purple-400"></i>
-          <div class="text-sm font-bold text-slate-200 text-center">Manual Testing</div>
-        </div>
-        <div class="skill-card">
-          <i class="fa-brands fa-github text-4xl text-slate-300"></i>
-          <div class="text-sm font-bold text-slate-200 text-center">Git / GitHub</div>
-        </div>
-        <div class="skill-card">
-          <i class="fa-solid fa-server text-4xl text-blue-400"></i>
-          <div class="text-sm font-bold text-slate-200 text-center">Jenkins</div>
-        </div>
-        <div class="skill-card">
-          <i class="fa-solid fa-seedling text-4xl text-green-500"></i>
-          <div class="text-sm font-bold text-slate-200 text-center">Cucumber / BDD</div>
-        </div>
-        <div class="skill-card">
-          <i class="fa-solid fa-list-check text-4xl text-sky-400"></i>
-          <div class="text-sm font-bold text-slate-200 text-center">Jira</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ── EXPERIENCE ── -->
+    <!-- EXPERIENCE -->
     <section id="experience" class="section-wrap section-divider">
       <div class="text-center mb-12">
         <h2 class="text-4xl font-extrabold text-white mb-2">Experience</h2>
         <p class="text-slate-400">Where I've worked</p>
       </div>
-
       <div class="max-w-3xl mx-auto">
         <div class="flex gap-4">
-          <!-- Timeline -->
           <div class="flex flex-col items-center pt-1">
             <div class="timeline-dot"></div>
             <div class="timeline-line flex-1 mt-2"></div>
           </div>
-          <!-- Content -->
           <div class="card p-7 flex-1 mb-6">
-            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 mb-1">
+            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-1">
               <h3 class="font-extrabold text-xl text-white">Associate QA Engineer I</h3>
               <span class="badge-live">Current</span>
             </div>
@@ -493,7 +233,124 @@
       </div>
     </section>
 
-    <!-- ── EDUCATION ── -->
+    <!-- PROJECTS -->
+    <section id="projects" class="section-wrap section-divider">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-extrabold text-white mb-2">Projects</h2>
+        <p class="text-slate-400">What I've built and tested</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <div class="card p-6 flex flex-col gap-4">
+          <div class="flex items-start justify-between gap-2">
+            <h3 class="font-bold text-lg text-white leading-snug">Wizlo Web Application – Manual & Automation</h3>
+            <span class="badge-live">Live</span>
+          </div>
+          <p class="text-sm text-slate-400 leading-relaxed flex-1">
+            Automated end-to-end scenarios including form validations, dynamic tables, and error handling using Playwright & Java. Integrated test suites into CI/CD pipelines. Validated backend APIs and designed reusable page objects for scalable coverage.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="chip">Playwright</span><span class="chip">Java</span><span class="chip">TestNG</span><span class="chip">Jira</span><span class="chip">CI/CD</span>
+          </div>
+          <a href="https://github.com/akashkattempudi" target="_blank" class="text-indigo-400 hover:text-indigo-300 text-sm font-semibold flex items-center gap-1 w-max">
+            <i class="fa-brands fa-github"></i> View on GitHub
+          </a>
+        </div>
+
+        <div class="card p-6 flex flex-col gap-4">
+          <div class="flex items-start justify-between gap-2">
+            <h3 class="font-bold text-lg text-white leading-snug">Sparrow API Tool – Manual & Automation</h3>
+            <span class="badge-live">Live</span>
+          </div>
+          <p class="text-sm text-slate-400 leading-relaxed flex-1">
+            End-to-end manual & automated testing of the Sparrow API tool. Validated REST, GraphQL, and WebSocket flows. Built a TestNG-based Playwright framework with reusable page classes and assertion-based validations.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="chip">Playwright</span><span class="chip">Java</span><span class="chip">TestNG</span><span class="chip">Jira</span>
+          </div>
+          <a href="https://github.com/akashkattempudi" target="_blank" class="text-indigo-400 hover:text-indigo-300 text-sm font-semibold flex items-center gap-1 w-max">
+            <i class="fa-brands fa-github"></i> View on GitHub
+          </a>
+        </div>
+
+        <div class="card p-6 flex flex-col gap-4">
+          <h3 class="font-bold text-lg text-white leading-snug">E-Commerce Automation Framework</h3>
+          <p class="text-sm text-slate-400 leading-relaxed flex-1">
+            End-to-end automation for login, product selection, cart, and order workflows using Python & Selenium. Implemented POM for maintainability. Integrated Jenkins for CI/CD with Allure & HTML reporting.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="chip">Python</span><span class="chip">Selenium</span><span class="chip">Pytest</span><span class="chip">Jenkins</span><span class="chip">Allure</span>
+          </div>
+          <a href="https://github.com/akashkattempudi/ecommerce-automation-selenium-pytest-bdd" target="_blank" class="text-indigo-400 hover:text-indigo-300 text-sm font-semibold flex items-center gap-1 w-max">
+            <i class="fa-brands fa-github"></i> View on GitHub
+          </a>
+        </div>
+
+        <div class="card p-6 flex flex-col gap-4">
+          <h3 class="font-bold text-lg text-white leading-snug">API Automation Suite</h3>
+          <p class="text-sm text-slate-400 leading-relaxed flex-1">
+            API automation framework validating multiple endpoints (products, brands, user management) using Pytest & Requests with dynamic test data. Allure reporting and Excel-based test traceability.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="chip">Python</span><span class="chip">Pytest</span><span class="chip">Requests</span><span class="chip">Allure</span>
+          </div>
+          <a href="https://github.com/akashkattempudi/api-automation-suite" target="_blank" class="text-indigo-400 hover:text-indigo-300 text-sm font-semibold flex items-center gap-1 w-max">
+            <i class="fa-brands fa-github"></i> View on GitHub
+          </a>
+        </div>
+
+        <div class="card p-6 flex flex-col gap-4">
+          <h3 class="font-bold text-lg text-white leading-snug">Restaurant Database Project</h3>
+          <p class="text-sm text-slate-400 leading-relaxed flex-1">
+            Mini Restaurant Management System built with MySQL. Covers customers, orders, employees, menu items, payments, and feedback — demonstrating practical relational database design.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="chip">MySQL</span><span class="chip">RDBMS</span><span class="chip">Schema Design</span>
+          </div>
+          <a href="https://github.com/akashkattempudi/restaurant-db-project" target="_blank" class="text-indigo-400 hover:text-indigo-300 text-sm font-semibold flex items-center gap-1 w-max">
+            <i class="fa-brands fa-github"></i> View on GitHub
+          </a>
+        </div>
+
+        <div class="card p-6 flex flex-col gap-4">
+          <h3 class="font-bold text-lg text-white leading-snug">Manual Testing – Satya Sai Grama App</h3>
+          <p class="text-sm text-slate-400 leading-relaxed flex-1">
+            Tested visitor workflows (pre-approval, registration, entry/exit) as part of a 9-member QA team. Designed 62 test cases, logged defects, and maintained a Requirement Traceability Matrix.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="chip">Manual Testing</span><span class="chip">MS Excel</span><span class="chip">ClickUp</span><span class="chip">RTM</span>
+          </div>
+          <a href="https://github.com/akashkattempudi/SSG-Mobile-Manual-Testing" target="_blank" class="text-indigo-400 hover:text-indigo-300 text-sm font-semibold flex items-center gap-1 w-max">
+            <i class="fa-brands fa-github"></i> View on GitHub
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="section-wrap section-divider">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-extrabold text-white mb-2">Skills</h2>
+        <p class="text-slate-400">Tools and technologies I work with</p>
+      </div>
+      <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-4">
+        <div class="skill-card"><i class="fa-brands fa-python text-4xl text-yellow-400"></i><div class="text-sm font-bold text-slate-200 text-center">Python</div></div>
+        <div class="skill-card"><i class="fa-brands fa-java text-4xl text-orange-500"></i><div class="text-sm font-bold text-slate-200 text-center">Java</div></div>
+        <div class="skill-card"><i class="fa-solid fa-masks-theater text-4xl text-green-400"></i><div class="text-sm font-bold text-slate-200 text-center">Playwright</div></div>
+        <div class="skill-card"><i class="fa-solid fa-gear text-4xl text-indigo-400"></i><div class="text-sm font-bold text-slate-200 text-center">Selenium</div></div>
+        <div class="skill-card"><i class="fa-solid fa-file-code text-4xl text-emerald-400"></i><div class="text-sm font-bold text-slate-200 text-center">Pytest / TestNG</div></div>
+        <div class="skill-card"><i class="fa-solid fa-flask text-4xl text-orange-400"></i><div class="text-sm font-bold text-slate-200 text-center">Postman</div></div>
+        <div class="skill-card"><i class="fa-solid fa-database text-4xl text-amber-400"></i><div class="text-sm font-bold text-slate-200 text-center">MySQL</div></div>
+        <div class="skill-card"><i class="fa-solid fa-bug text-4xl text-purple-400"></i><div class="text-sm font-bold text-slate-200 text-center">Manual Testing</div></div>
+        <div class="skill-card"><i class="fa-brands fa-github text-4xl text-slate-300"></i><div class="text-sm font-bold text-slate-200 text-center">Git / GitHub</div></div>
+        <div class="skill-card"><i class="fa-solid fa-server text-4xl text-blue-400"></i><div class="text-sm font-bold text-slate-200 text-center">Jenkins</div></div>
+        <div class="skill-card"><i class="fa-solid fa-seedling text-4xl text-green-500"></i><div class="text-sm font-bold text-slate-200 text-center">Cucumber / BDD</div></div>
+        <div class="skill-card"><i class="fa-solid fa-list-check text-4xl text-sky-400"></i><div class="text-sm font-bold text-slate-200 text-center">Jira</div></div>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
     <section id="education" class="section-wrap section-divider">
       <div class="text-center mb-12">
         <h2 class="text-4xl font-extrabold text-white mb-2">Education</h2>
@@ -521,7 +378,7 @@
       </div>
     </section>
 
-    <!-- ── CERTIFICATIONS ── -->
+    <!-- CERTIFICATIONS -->
     <section id="certifications" class="section-wrap section-divider">
       <div class="text-center mb-12">
         <h2 class="text-4xl font-extrabold text-white mb-2">Certifications</h2>
@@ -571,7 +428,6 @@
 
   </main>
 
-  <!-- Footer -->
   <footer class="relative z-10 border-t border-slate-800 py-8 text-center">
     <p class="text-slate-500 text-sm">© 2025 Akash Kattempudi. Built with passion for quality.</p>
     <div class="flex justify-center gap-4 mt-4">
@@ -582,7 +438,6 @@
   </footer>
 
   <script>
-    // Typewriter
     const tw = new Typewriter(document.getElementById('typewriter'), { loop: true, delay: 60 });
     tw.typeString('QA Automation Engineer').pauseFor(1400).deleteAll()
       .typeString('Playwright Specialist').pauseFor(1400).deleteAll()
@@ -590,10 +445,8 @@
       .typeString('API Testing Expert').pauseFor(1400).deleteAll()
       .start();
 
-    // Mobile menu toggle
     function toggleMenu() {
-      const m = document.getElementById('mobile-menu');
-      m.classList.toggle('open');
+      document.getElementById('mobile-menu').classList.toggle('open');
     }
   </script>
 </body>
